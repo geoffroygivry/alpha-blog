@@ -1,0 +1,38 @@
+Step 1: Ensure you are in the code/rails_projects directory and not in an existing rails application directory like code/rails_projects/test_app
+Step 2: Create a new rails application using the command ->
+rails new alpha-blog
+Step 3: Change directory into the new application using ->
+cd alpha-blog
+Step 4: Run the rails server using the command ->
+rails s -b 0.0.0.0
+Step 5: Preview the application and ensure the Rails welcome page shows up by clicking on preview and then Port 3000 (Default) on the top menu of your nitrous IDE
+Step 6: Append a /pages/home to the URL and you'll receive a routing error
+Step 7: Go to config/routes.rb file and add the following two routes ->
+get 'pages/home', to: 'pages#home'
+get 'pages/about', to: 'pages#about'
+Step 8: Now if you reload the page after saving the routes file you'll receive uninitialized constant pages controller error
+Step 9: Under app/controllers create a pages_controller.rb file by right clicking on controllers folder and selecting the 'New File' option
+Step 10: Fill in the pages_controller.rb file with the following code:
+class PagesController < ApplicationController
+def home
+end
+def about
+end
+end
+Step 11: Now if you reload any of the pages you'll get a missing template error, so create a folder under views called pages (right click on the views folder and select 'New Folder')
+Step 12: Under pages folder, create two files named home.html.erb and about.html.erb
+Step 13: Fill in these two files with HTML code
+Step 14: To upload an image to your app that you want to reference in your code, go to app/assets/images and right click on images, then select the upload files to images option. Select the image you want to upload. Once uploaded check the images folder and note the name of your file (for example profileimage.png). Then to show this image in your HTML page and to link it to another page, put in the following code (this is if the file you're referencing is profileimage.png) ->
+<%= link_to image_tag('profileimage.png'), 'www.mashrurhossain.com' %>
+The image tag is for the image, and the link_to turns the image to a link and then you provide the link you want it to go to after the comma
+If you simply want to display an image without a link, put in the following code ->
+<%= image_tag 'profileimage.png' %>
+Step 15: Now if you go to either the pages/home or pages/about link (appended to your nitrous preview page URL) you will get the home and/or about pages
+Step 16: Enter in the path to the about page in the home.html.erb and the homepage in the about.html.erb pages as below ->
+In the home.html.erb page
+<%= link_to 'About', pages_about_path %>
+In the about.html.erb page
+<%= link_to 'Home', pages_home_path %>
+Ensure you have the appropriate links by checking with rake routes
+Step 17: Click the links in the refreshed browser pages to ensure they work
+Good luck!
