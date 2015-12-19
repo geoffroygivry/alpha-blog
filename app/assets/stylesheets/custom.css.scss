@@ -1,2 +1,16 @@
+$navbar-default-bg : #343E48;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  font-size : 1.7em;
+}
+
+.jumbotron {
+  text-align : center;
+}
+
+.aboutClass{
+  font-size : 1.2em;
+}
