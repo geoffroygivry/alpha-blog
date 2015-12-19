@@ -2,7 +2,7 @@
 <h2>The Following errors prevented the article to be created.</h2>
 <ul>
   <% @article.errors.full_messages.each do |msg| %>
-  <li><% msg %></li>
+  <li><%= msg %></li>
   <% end %>
 </ul>
 <% end %>
