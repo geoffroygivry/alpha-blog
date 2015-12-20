@@ -1,10 +1,12 @@
-<h1>Article <%= @article.id %></h1>
+<div class="container">
+  <h1>Article <%= @article.id %></h1>
 
-<h2>Title : <%= @article.title %></h2>
+  <h2>Title : <%= @article.title %></h2>
 
-<p>
- Description: <br/> <%= @article.description %>
-</p>
+  <p>
+   Description: <br/> <%= @article.description %>
+  </p>
 
-<%= link_to "Edit this article", edit_article_path(@article) %> |
-<%= link_to "Back to articles listing", articles_path %>
+  <%= link_to "Edit this article", edit_article_path(@article) %> |
+  <%= link_to "Back to articles listing", articles_path %>
+</div>
