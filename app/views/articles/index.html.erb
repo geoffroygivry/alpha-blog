@@ -1,6 +1,12 @@
 <div class="container">
   <h1 align="center">Index of all Articles.</h1>
-
-  <%= render 'article', obj: @articleAll %>
+  <div align='center'>
+    <%= will_paginate %>
+  </div>
+  <%= render 'article', obj: @articles %>
+  
+  <div align='center'>
+    <%= will_paginate %>
+  </div>
 
 </div>
